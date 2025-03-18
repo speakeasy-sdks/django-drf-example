@@ -1,4 +1,4 @@
-# Django Clerk Auth Example
+# Django DRF Clerk Auth Example
 
 A demonstration of using Clerk JWT authentication with Django. This example shows how to integrate Clerk's user authentication with a Django DRF backend API.
 
