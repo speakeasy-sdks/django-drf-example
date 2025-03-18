@@ -32,6 +32,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'clerkapp.exception_handler.custom_exception_handler',
+}
+
 # Application definition
 
 INSTALLED_APPS = [

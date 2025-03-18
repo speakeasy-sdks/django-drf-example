@@ -26,10 +26,10 @@ class JwtAuthentication(authentication.BaseAuthentication):
                     authorized_parties=settings.CLERK_AUTHORIZED_PARTIES,
                 ),
             )
-            if request_state.reason:
-                return None
-        except Exception:
-            raise NotAuthenticated('Invalid token')
+            if not request_state.is_signed_in:
+                raise NotAuthenticated(request_state.message)
+        except Exception as e:
+            raise e
 
         # Ideally at this point user object must be fetched from DB and returned, but we will just return a dummy
         # user object
